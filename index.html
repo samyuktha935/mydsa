@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>DSA Blossom Board Tracker</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    body{font-family:Poppins,sans-serif;background:#fde2f3;color:#4A0072;padding:20px;}
+    h1{text-align:center;color:#9c27b0;margin-bottom:20px;font-size:2.5em;}
+    .progress-container{max-width:700px;margin:0 auto 30px;}
+    .progress-label{font-weight:600;margin-bottom:6px;color:#6f42c1;}
+    .progress-bar{background:#e0e0e0;border-radius:10px;height:14px;overflow:hidden;margin-bottom:15px;}
+    .progress-bar-fill{height:100%;background:linear-gradient(to right,#ff6fa1,#b480f2);transition:width .3s ease;}
+    .pattern{background:linear-gradient(to right,#f8a5c2,#d0a7f3);border-radius:12px;padding:15px;margin:25px auto;width:90%;max-width:700px;box-shadow:0 4px 8px rgba(0,0,0,0.1);}
+    .pattern h2{font-size:2.5em;color:#6f42c1;margin-bottom:8px;}
+    .question{display:flex;align-items:center;background:#fff;padding:6px 10px;margin:6px 0;border-radius:6px;}
+    .question input[type="checkbox"]{margin-right:10px;transform:scale(1.2);accent-color:#d63384;}
+    .question a{color:#6f42c1;text-decoration:none;font-weight:500;}
+    .question a:hover{text-decoration:underline;}
+    @media (max-width:600px){h1{font-size:2em}.pattern h2{font-size:1.3em}.question{font-size:0.95em}}
+  </style>
+</head>
+<body>
+  <h1>DSA Blossom Board 🌸</h1>
+  <div class="progress-container">
+    <div class="progress-label">Overall Progress</div>
+    <div class="progress-bar"><div id="overallProgress" class="progress-bar-fill"></div></div>
+  </div>
+  <div class="source-links" style="margin-bottom: 20px; font-size: 16px; line-height: 1.8;">
+  🌸 <a href="https://veedaily19.substack.com/p/master-dsa-in-14-weeks?utm_campaign=post&triedRedirect=true" target="_blank" style="color:#673ab7; font-size: large; font-weight: 800;">Pattern-based (White)</a><br/>
+  🌸 <a href="https://leetcode.com/discuss/post/5886397/dsa-patterns-you-need-to-know-by-anubhav-x7og/" target="_blank" style="color:#673ab7; font-size: large ;font-weight: 800;">Pattern-based (Black)</a>
+</div>
+
+  <!-- Merge each pattern; combine questions from both codes -->
+  <!-- Two Pointers -->
+ <div class="pattern">
+  <h2>🌸Two Pointers</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="two-0"><label for="two-0"><a href="https://leetcode.com/problems/two-sum/">Pair with Target Sum (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-1"><label for="two-1"><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove Duplicates (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-2"><label for="two-2"><a href="https://leetcode.com/problems/squares-of-a-sorted-array/description/">Squaring a Sorted Array (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-3"><label for="two-3"><a href="https://leetcode.com/problems/3sum/">Triplet Sum to Zero (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-4"><label for="two-4"><a href="https://leetcode.com/problems/3sum-closest/">Triplet Sum Close to Target (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-5"><label for="two-5"><a href="https://leetcode.com/problems/subarrays-with-product-less-than-k/">Subarrays with Product Less than a Target (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-6"><label for="two-6"><a href="https://coderbyte.com/algorithm/dutch-national-flag-sorting-problem">Dutch National Flag (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-7"><label for="two-7"><a href="https://leetcode.com/problems/4sum/">Quadruple Sum to Target (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-8"><label for="two-8"><a href="https://leetcode.com/problems/backspace-string-compare/">Comparing Strings containing Backspaces (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-9"><label for="two-9"><a href="https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/">Minimum Window Sort (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-10"><label for="two-10"><a href="https://leetcode.com/problems/linked-list-cycle/">LinkedList Cycle (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-11"><label for="two-11"><a href="https://leetcode.com/problems/linked-list-cycle-ii/description/">Start of LinkedList Cycle (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-12"><label for="two-12"><a href="https://leetcode.com/problems/happy-number/description/">Happy Number (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-13"><label for="two-13"><a href="https://leetcode.com/problems/middle-of-the-linked-list/description/">Middle of the LinkedList (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-14"><label for="two-14"><a href="https://leetcode.com/problems/palindrome-linked-list/description/">Palindrome LinkedList (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="two-15"><label for="two-15"><a href="https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/">Two Sum II – Sorted Array</a></label></div>
+  <div class="question"><input type="checkbox" id="two-16"><label for="two-16"><a href="https://leetcode.com/problems/next-permutation/description/">Next Permutation</a></label></div>
+  <div class="question"><input type="checkbox" id="two-17"><label for="two-17"><a href="https://leetcode.com/problems/bag-of-tokens/description/">Bag of Tokens</a></label></div>
+  <div class="question"><input type="checkbox" id="two-18"><label for="two-18"><a href="https://leetcode.com/problems/container-with-most-water/description/">Container With Most Water</a></label></div>
+  <div class="question"><input type="checkbox" id="two-19"><label for="two-19"><a href="https://leetcode.com/problems/trapping-rain-water/description/">Trapping Rain Water</a></label></div>
+</div>
+
+
+<!-- 🌸 Fast & Slow Pointers -->
+<div class="pattern">
+  <h2>🌸Fast &amp; Slow Pointers</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="cb_fsp1"/><label for="cb_fsp1"><a href="https://leetcode.com/problems/linked-list-cycle/">LinkedList Cycle (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp2"/><label for="cb_fsp2"><a href="https://leetcode.com/problems/linked-list-cycle-ii/">Start of LinkedList Cycle / Linked List Cycle II</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp3"/><label for="cb_fsp3"><a href="https://leetcode.com/problems/happy-number/">Happy Number (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp4"/><label for="cb_fsp4"><a href="https://leetcode.com/problems/middle-of-the-linked-list/">Middle of the LinkedList (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp5"/><label for="cb_fsp5"><a href="https://leetcode.com/problems/palindrome-linked-list/">Palindrome Linked List</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp6"/><label for="cb_fsp6"><a href="https://leetcode.com/problems/reorder-list/">Rearrange a LinkedList (medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp7"/><label for="cb_fsp7"><a href="https://leetcode.com/problems/circular-array-loop/">Cycle in a Circular Array (hard)</a></label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp8"/><label for="cb_fsp8">Remove Nth Node From End of List</label></div>
+  <div class="question"><input type="checkbox" id="cb_fsp9"/><label for="cb_fsp9"><a href="https://leetcode.com/problems/find-the-duplicate-number/">Find the Duplicate Number</a></label></div>
+</div>
+
+
+<!-- Sliding Window -->
+<div class="pattern">
+  <h2>🌸Sliding Window</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="sw1"/><label for="sw1"><a href="https://leetcode.com/problems/maximum-sum-subarray-of-size-k/">Maximum Sum Subarray of Size K</a></label></div>
+  <div class="question"><input type="checkbox" id="sw2"/><label for="sw2"><a href="https://leetcode.com/problems/minimum-size-subarray-sum/">Smallest Subarray with a Given Sum</a></label></div>
+  <div class="question"><input type="checkbox" id="sw3"/><label for="sw3"><a href="https://leetcode.com/problems/longest-substring-with-k-distinct-characters/">Longest Substring with K Distinct Characters</a></label></div>
+  <div class="question"><input type="checkbox" id="sw4"/><label for="sw4"><a href="https://leetcode.com/problems/fruit-into-baskets/">Fruits into Baskets</a></label></div>
+  <div class="question"><input type="checkbox" id="sw5"/><label for="sw5"><a href="https://leetcode.com/problems/longest-repeating-character-replacement/">Longest Substring with Same Letters after Replacement</a></label></div>
+  <div class="question"><input type="checkbox" id="sw6"/><label for="sw6"><a href="https://leetcode.com/problems/max-consecutive-ones-iii/">Longest Subarray with Ones after Replacement</a></label></div>
+  <div class="question"><input type="checkbox" id="sw7"/><label for="sw7"><a href="https://leetcode.com/problems/permutation-in-string/">Permutation in a String</a></label></div>
+  <div class="question"><input type="checkbox" id="sw8"/><label for="sw8"><a href="https://leetcode.com/problems/find-all-anagrams-in-a-string/">String Anagrams</a></label></div>
+  <div class="question"><input type="checkbox" id="sw9"/><label for="sw9"><a href="https://leetcode.com/problems/minimum-window-substring/">Minimum Window Substring / Smallest Window containing Substring</a></label></div>
+  <div class="question"><input type="checkbox" id="sw10"/><label for="sw10"><a href="https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/">Words Concatenation</a></label></div>
+
+  <div class="question"><input type="checkbox" id="sw11"/><label for="sw11"><a href="https://leetcode.com/problems/number-of-sub-arrays-of-size-k-and-average-greater-than-or-equal-to-threshold/description/">Number of Subarrays with Avg ≥ Threshold</a></label></div>
+  <div class="question"><input type="checkbox" id="sw12"/><label for="sw12"><a href="https://leetcode.com/problems/repeated-dna-sequences/description/">Repeated DNA Sequences</a></label></div>
+  <div class="question"><input type="checkbox" id="sw13"/><label for="sw13"><a href="https://leetcode.com/problems/sliding-subarray-beauty/">Sliding Subarray Beauty</a></label></div>
+  <div class="question"><input type="checkbox" id="sw14"/><label for="sw14"><a href="https://leetcode.com/problems/sliding-window-maximum/">Sliding Window Maximum</a></label></div>
+  <div class="question"><input type="checkbox" id="sw15"/><label for="sw15"><a href="https://leetcode.com/problems/count-number-of-nice-subarrays/">Count Number of Nice Subarrays</a></label></div>
+</div>
+
+<!-- Merge Intervals / Overlapping Intervals -->
+<div class="pattern">
+  <h2>🌸Overlapping Intervals / Merge Intervals</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="oi1"/><label for="oi1"><a href="https://leetcode.com/problems/merge-intervals/">Merge Intervals</a></label></div>
+  <div class="question"><input type="checkbox" id="oi2"/><label for="oi2"><a href="https://leetcode.com/problems/insert-interval/">Insert Interval</a></label></div>
+  <div class="question"><input type="checkbox" id="oi3"/><label for="oi3"><a href="https://leetcode.com/problems/interval-list-intersections/">Intervals Intersection</a></label></div>
+  <div class="question"><input type="checkbox" id="oi4"/><label for="oi4"><a href="https://leetcode.com/problems/meeting-rooms-ii/">Minimum Meeting Rooms</a></label></div>
+  <div class="question"><input type="checkbox" id="oi5"/><label for="oi5"><a href="https://leetcode.com/problems/my-calendar-ii/description/">My Calendar II</a></label></div>
+  <div class="question"><input type="checkbox" id="oi6"/><label for="oi6"><a href="https://leetcode.com/problems/minimum-number-of-arrows-to-burst-balloons/description/">Minimum Number of Arrows to Burst Balloons</a></label></div>
+  <div class="question"><input type="checkbox" id="oi7"/><label for="oi7"><a href="https://leetcode.com/problems/non-overlapping-intervals/">Non‑overlapping Intervals</a></label></div>
+  <div class="question"><input type="checkbox" id="oi8"/><label for="oi8"><a href="https://www.geeksforgeeks.org/dsa/given-n-appointments-find-conflicting-appointments/">Conflicting Appointments</a></label></div>
+  <div class="question"><input type="checkbox" id="oi9"/><label for="oi9"><a href="https://www.geeksforgeeks.org/dsa/maximum-cpu-load-from-the-given-list-of-jobs/">Maximum CPU Load</a></label></div>
+  <div class="question"><input type="checkbox" id="oi10"/><label for="oi10"><a href="https://www.naukri.com/code360/problem-details/employee-free-time_1171181">Employee Free Time</a></label></div>
+</div>
+
+ <!-- 🌸 Cyclic Sort <a href=""> -->
+<div class="pattern">
+  <h2>🌸Cyclic Sort</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="cs1"/><label for="cs1"><a href="https://leetcode.com/problems/missing-number/">Missing Number</a></label></div>
+  <div class="question"><input type="checkbox" id="cs2"/><label for="cs2"><a href="https://leetcode.com/problems/set-mismatch/">Set Mismatch</a></label></div>
+  <div class="question"><input type="checkbox" id="cs3"/><label for="cs3"><a href="https://leetcode.com/problems/first-missing-positive/">First Missing Positive</a></label></div>
+  
+  <div class="question"><input type="checkbox" id="cs4"/><label for="cs4"><a href="https://www.geeksforgeeks.org/dsa/sort-array-contains-1-n-values-set-2/">Cyclic Sort (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cs5"/><label for="cs5"><a href="https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/">Find all Missing Numbers (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cs6"/><label for="cs6"><a href="https://leetcode.com/problems/find-the-duplicate-number/">Find the Duplicate Number (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cs7"/><label for="cs7"><a href="https://leetcode.com/problems/find-all-duplicates-in-an-array/">Find all Duplicate Numbers (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cs8"/><label for="cs8"><a href="https://thecodingsimplified.com/find-currupt-pair/">Find the Corrupt Pair (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="cs9"/><label for="cs9"><a href="https://thecodingsimplified.com/find-the-first-k-missing-positive-number/">Find the First K Missing Positive Numbers (hard)</a></label></div>
+</div>
+
+
+ <!-- 🌸In‑place Reversal of LinkedList -->
+<div class="pattern">
+  <h2>🌸In‑place Reversal of LinkedList</h2>
+  <div class="progress-label">Pattern Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="rl1"/><label for="rl1"><a href="https://leetcode.com/problems/reverse-linked-list/">Reverse Linked List</a></label></div>
+  <div class="question"><input type="checkbox" id="rl2"/><label for="rl2"><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Reverse Nodes in K‑Group</a></label></div>
+  <div class="question"><input type="checkbox" id="rl3"/><label for="rl3"><a href="https://leetcode.com/problems/swap-nodes-in-pairs/description/">Swap Nodes in Pairs</a></label></div>
+  <div class="question"><input type="checkbox" id="rl4"/><label for="rl4"><a href="https://leetcode.com/problems/reverse-linked-list-ii/">Reverse a Sub‑list</a></label></div>
+  <div class="question"><input type="checkbox" id="rl5"/><label for="rl5"><a href="https://leetcode.com/problems/reverse-nodes-in-k-group/">Reverse alternating K‑element Sub‑list</a></label></div>
+  <div class="question"><input type="checkbox" id="rl6"/><label for="rl6"><a href="https://leetcode.com/problems/rotate-list/">Rotate a LinkedList</a></label></div>
+</div>
+
+
+
+ <!-- 🌸Stack & Monotonic Stack <a href=""> -->
+<div class="pattern">
+  <h2>🌸Stack & Monotonic Stack</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="st1"/><label for="st1">Introduction to Stack (operations, implementation, applications)</label></div>
+  <div class="question"><input type="checkbox" id="st2"/><label for="st2"><a href="https://leetcode.com/problems/valid-parentheses/">Balanced Parentheses</a></label></div>
+  <div class="question"><input type="checkbox" id="st3"/><label for="st3"><a href="https://leetcode.com/problems/reverse-string/">Reverse a String</a></label></div>
+  <div class="question"><input type="checkbox" id="st4"/><label for="st4">Decimal to Binary Conversion</label></div>
+  <div class="question"><input type="checkbox" id="st5"/><label for="st5"><a href="https://leetcode.com/problems/next-greater-element-i/">Next Greater Element I</a></label></div>
+  <div class="question"><input type="checkbox" id="st6"/><label for="st6"><a href="https://leetcode.com/problems/next-greater-element-ii/">Next Greater Element II</a></label></div>
+  <div class="question"><input type="checkbox" id="st7"/><label for="st7"><a href="https://leetcode.com/problems/next-greater-element-iii/">Next Greater Element III</a></label></div>
+  <div class="question"><input type="checkbox" id="st8"/><label for="st8">Sorting a Stack</label></div>
+  <div class="question"><input type="checkbox" id="st9"/><label for="st9"><a href="https://leetcode.com/problems/simplify-path/">Simplify Path</a></label></div>
+  <div class="question"><input type="checkbox" id="st10"/><label for="st10">Introduction to Monotonic Stack</label></div>
+  <div class="question"><input type="checkbox" id="st11"/><label for="st11"><a href="https://leetcode.com/problems/next-greater-element-i/">Next Greater Element (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="st12"/><label for="st12"><a href="https://leetcode.com/problems/daily-temperatures/">Daily Temperatures</a></label></div>
+  <div class="question"><input type="checkbox" id="st13"/><label for="st13"><a href="https://leetcode.com/problems/remove-nodes-from-linked-list/description/">Remove Nodes From Linked List (easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="st14"/><label for="st14"><a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string/">Remove All Adjacent Duplicates in String I</a></label></div>
+  <div class="question"><input type="checkbox" id="st15"/><label for="st15"><a href="https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/">Remove All Adjacent Duplicates in String II</a></label></div>
+  <div class="question"><input type="checkbox" id="st16"/><label for="st16"><a href="https://leetcode.com/problems/remove-k-digits/">Remove K Digits</a></label></div>
+</div>
+
+<div class="pattern">
+  <h2>🌸Hash Maps & Tree (BFS)</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="ht1"/><label for="ht1">Introduction to hashing, hash tables, issues</label></div>
+  <div class="question"><input type="checkbox" id="ht2"/><label for="ht2"><a href="https://leetcode.com/problems/first-unique-character-in-a-string/">First Non‑repeating Character</a></label></div>
+  <div class="question"><input type="checkbox" id="ht3"/><label for="ht3">Largest Unique Number</label></div>
+  <div class="question"><input type="checkbox" id="ht4"/><label for="ht4"><a href="https://leetcode.com/problems/maximum-number-of-balloons/">Maximum Number of Balloons</a></label></div>
+  <div class="question"><input type="checkbox" id="ht5"/><label for="ht5"><a href="https://leetcode.com/problems/longest-palindrome/">Longest Palindrome</a></label></div>
+  <div class="question"><input type="checkbox" id="ht6"/><label for="ht6"><a href="https://leetcode.com/problems/ransom-note/">Ransom Note</a></label></div>
+  <div class="question"><input type="checkbox" id="ht7"/><label for="ht7"><a href="https://leetcode.com/problems/binary-tree-level-order-traversal/">Binary Tree Level Order Traversal</a></label></div>
+  <div class="question"><input type="checkbox" id="ht8"/><label for="ht8"><a href="https://leetcode.com/problems/binary-tree-right-side-view/">Right View of a Binary Tree</a></label></div>
+  <div class="question"><input type="checkbox" id="ht9"/><label for="ht9">Zigzag Traversal</label></div>
+  <div class="question"><input type="checkbox" id="ht10"/><label for="ht10">Level Averages in a Binary Tree</label></div>
+  <div class="question"><input type="checkbox" id="ht11"/><label for="ht11">Minimum Depth of a Binary Tree</label></div>
+  <div class="question"><input type="checkbox" id="ht12"/><label for="ht12">Maximum Depth of a Binary Tree</label></div>
+  <div class="question"><input type="checkbox" id="ht13"/><label for="ht13">Connect Level Order Siblings</label></div>
+  <div class="question"><input type="checkbox" id="ht14"/><label for="ht14">Connect All Level Order Siblings</label></div>
+</div>
+
+
+ <!-- WEEK 6: Tree DFS and Graph -->
+<div class="pattern">
+  <h2>🌸Tree DFS & Graph</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="tg1"/><label for="tg1">Introduction to Tree DFS, Graph traversal</label></div>
+  <div class="question"><input type="checkbox" id="tg2"/><label for="tg2"><a href="https://leetcode.com/problems/binary-tree-path-sum/">Binary Tree Path Sum</a></label></div>
+  <div class="question"><input type="checkbox" id="tg3"/><label for="tg3"><a href="https://leetcode.com/problems/all-paths-from-source-to-target/">All Paths for a Sum</a></label></div>
+  <div class="question"><input type="checkbox" id="tg4"/><label for="tg4">Sum of Path Numbers</label></div>
+  <div class="question"><input type="checkbox" id="tg5"/><label for="tg5">Path With Given Sequence</label></div>
+  <div class="question"><input type="checkbox" id="tg6"/><label for="tg6"><a href="https://leetcode.com/problems/count-paths-for-a-sum/">Count Paths for a Sum</a></label></div>
+  <div class="question"><input type="checkbox" id="tg7"/><label for="tg7">Tree Diameter</label></div>
+  <div class="question"><input type="checkbox" id="tg8"/><label for="tg8">Path with Maximum Sum</label></div>
+  <div class="question"><input type="checkbox" id="tg9"/><label for="tg9">Introduction to Graph (ADT, traversal)</label></div>
+  <div class="question"><input type="checkbox" id="tg10"/><label for="tg10"><a href="https://leetcode.com/problems/find-if-path-exists-in-graph/">Find if Path Exists in Graph</a></label></div>
+  <div class="question"><input type="checkbox" id="tg11"/><label for="tg11"><a href="https://leetcode.com/problems/number-of-provinces/">Number of Provinces</a></label></div>
+  <div class="question"><input type="checkbox" id="tg12"/><label for="tg12">Minimum Number of Vertices to Reach All Nodes</label></div>
+</div>
+
+
+<!-- WEEK 7: Island and Two Heaps -->
+<div class="pattern">
+  <h2>🌸Island & Two Heaps</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="i2h1"/><label for="i2h1"><a href="https://leetcode.com/problems/number-of-islands/">Number of Islands</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h2"/><label for="i2h2">Biggest Island</label></div>
+  <div class="question"><input type="checkbox" id="i2h3"/><label for="i2h3"><a href="https://leetcode.com/problems/flood-fill/">Flood Fill</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h4"/><label for="i2h4"><a href="https://leetcode.com/problems/number-of-closed-islands/">Number of Closed Islands</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h5"/><label for="i2h5"><a href="https://leetcode.com/problems/find-median-from-data-stream/">Find the Median of a Number Stream</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h6"/><label for="i2h6"><a href="https://leetcode.com/problems/sliding-window-median/">Sliding Window Median</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h7"/><label for="i2h7"><a href="https://leetcode.com/problems/ipo/">Maximize Capital</a></label></div>
+  <div class="question"><input type="checkbox" id="i2h8"/><label for="i2h8"><a href="https://www.interviewbit.com/problems/maximum-sum-combinations/">Maximum Sum Combinations</a></label></div>
+</div>
+
+<!-- WEEK 8: Subsets & Modified Binary Search -->
+<div class="pattern">
+  <h2>🌸Subsets & Modified Binary Search</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="w7-q1"/><label for="w7-q1"><a href="https://www.educative.io/courses/grokking-the-coding-interview/qVANqMonoB2">Subsets</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q2"/><label for="w7-q2"><a href="https://www.educative.io/courses/grokking-the-coding-interview/gx6oKY8Yb8Z">Subsets With Duplicates</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q3"/><label for="w7-q3"><a href="https://www.educative.io/courses/grokking-the-coding-interview/m2KnVybzqzD">Permutations</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q4"/><label for="w7-q4"><a href="https://www.geeksforgeeks.org/order-agnostic-binary-search/">Order-agnostic Binary Search</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q5"/><label for="w7-q5"><a href="https://www.geeksforgeeks.org/find-ceiling-in-a-sorted-array/">Ceiling of a Number</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q6"/><label for="w7-q6"><a href="https://leetcode.com/problems/find-smallest-letter-greater-than-target/">Next Letter</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q7"/><label for="w7-q7"><a href="https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/">Number Range</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q8"/><label for="w7-q8"><a href="https://leetcode.com/discuss/interview-question/786352/Google-or-Onsite-or-Search-in-a-Sorted-Infinite-Array">Search in a Sorted Infinite Array</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q9"/><label for="w7-q9">Minimum Difference Element</label></div>
+  <div class="question"><input type="checkbox" id="w7-q10"/><label for="w7-q10"><a href="https://www.geeksforgeeks.org/find-the-maximum-element-in-an-array-which-is-first-increasing-and-then-decreasing/">Bitonic Array Maximum</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q11"/><label for="w7-q11"><a href="https://leetcode.com/problems/peak-index-in-a-mountain-array/">Search Bitonic Array</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q12"/><label for="w7-q12"><a href="https://leetcode.com/problems/search-in-rotated-sorted-array/">Search in Rotated Array</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q13"/><label for="w7-q13"><a href="https://www.geeksforgeeks.org/find-rotation-count-rotated-sorted-array/">Rotation Count</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q14"/><label for="w7-q14"><a href="https://leetcode.com/problems/search-a-2d-matrix/">Search a 2D Matrix</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q15"/><label for="w7-q15"><a href="https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/">Minimum Number of Days to Make m Bouquets</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q16"/><label for="w7-q16"><a href="https://leetcode.com/problems/koko-eating-bananas/">Koko Eating Bananas</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q17"/><label for="w7-q17"><a href="https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/">Capacity To Ship Packages Within D Days</a></label></div>
+  <div class="question"><input type="checkbox" id="w7-q18"/><label for="w7-q18"><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">Median of Two Sorted Arrays</a></label></div>
+</div>
+
+
+
+<!-- 🌸 9: Bitwise XOR and Top K Elements -->
+<div class="pattern">
+  <h2>🌸Bitwise XOR and Top K Elements</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="bx1"/><label for="bx1"><a href="https://leetcode.com/problems/single-number/">Single Number</a></label></div>
+  <div class="question"><input type="checkbox" id="bx2"/><label for="bx2"><a href="https://leetcode.com/problems/single-number-iii/">Two Single Numbers</a></label></div>
+  <div class="question"><input type="checkbox" id="bx3"/><label for="bx3"><a href="https://leetcode.com/problems/complement-of-base-10-integer/">Complement of Base 10 Number</a></label></div>
+  <div class="question"><input type="checkbox" id="bx4"/><label for="bx4"><a href="https://leetcode.com/problems/flipping-an-image/">Flip and Invert an Image</a></label></div>
+  <div class="question"><input type="checkbox" id="bx5"/><label for="bx5"><a href="https://leetcode.com/problems/top-k-frequent-elements/">Top K Numbers</a></label></div>
+  <div class="question"><input type="checkbox" id="bx6"/><label for="bx6"><a href="https://www.geeksforgeeks.org/kth-smallestlargest-element-unsorted-array/">Kth Smallest Number</a></label></div>
+</div>
+
+
+<!-- 🌸 K-way Merge and Greedy Sort -->
+<div class="pattern">
+  <h2>🌸 K-way Merge and Greedy Sort</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="kg1"/><label for="kg1"><a href="https://leetcode.com/problems/merge-k-sorted-lists/">Merge K Sorted Lists</a></label></div>
+  <div class="question"><input type="checkbox" id="kg2"/><label for="kg2"><a href="https://www.geeksforgeeks.org/kth-smallest-element-in-row-wise-sorted-matrix-set-2/">Kth Smallest Number in M Sorted Lists</a></label></div>
+  <div class="question"><input type="checkbox" id="kg3"/><label for="kg3"><a href="https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/">Kth Smallest Number in a Sorted Matrix</a></label></div>
+  <div class="question"><input type="checkbox" id="kg4"/><label for="kg4"><a href="https://leetcode.com/problems/smallest-range-covering-elements-from-k-lists/">Smallest Number Range</a></label></div>
+  <div class="question"><input type="checkbox" id="kg5"/><label for="kg5"><a href="https://leetcode.com/problems/valid-palindrome-ii/">Valid Palindrome II</a></label></div>
+  <div class="question"><input type="checkbox" id="kg6"/><label for="kg6"><a href="https://leetcode.com/problems/maximum-length-of-pair-chain/">Maximum Length of Pair Chain</a></label></div>
+  <div class="question"><input type="checkbox" id="kg7"/><label for="kg7"><a href="https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/">Minimum Add to Make Parentheses Valid</a></label></div>
+  <div class="question"><input type="checkbox" id="kg8"/><label for="kg8"><a href="https://leetcode.com/problems/remove-duplicate-letters/">Remove Duplicate Letters</a></label></div>
+  <div class="question"><input type="checkbox" id="kg9"/><label for="kg9"><a href="https://leetcode.com/problems/largest-palindromic-number/">Largest Palindromic Number</a></label></div>
+  <div class="question"><input type="checkbox" id="kg10"/><label for="kg10"><a href="https://leetcode.com/problems/removing-minimum-and-maximum-from-array/">Removing Minimum and Maximum From Array</a></label></div>
+</div>
+
+
+
+<!-- 🌸 0/1 Knapsack and Backtracking-->
+<div class="pattern">
+  <h2>🌸 0/1 Knapsack and Backtracking</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="kb1"/><label for="kb1"><a href="https://www.geeksforgeeks.org/0-1-knapsack-problem-dp-10/">0/1 Knapsack</a></label></div>
+  <div class="question"><input type="checkbox" id="kb2"/><label for="kb2"><a href="https://leetcode.com/problems/partition-equal-subset-sum/">Equal Subset Sum Partition</a></label></div>
+  <div class="question"><input type="checkbox" id="kb3"/><label for="kb3"><a href="https://www.geeksforgeeks.org/subset-sum-problem-dp-25/">Subset Sum</a></label></div>
+  <div class="question"><input type="checkbox" id="kb4"/><label for="kb4"><a href="https://www.geeksforgeeks.org/minimum-subset-sum-difference-dp-18/">Minimum Subset Sum Difference</a></label></div>
+  <div class="question"><input type="checkbox" id="kb5"/><label for="kb5"><a href="https://leetcode.com/problems/combination-sum/">Combination Sum I</a></label></div>
+  <div class="question"><input type="checkbox" id="kb6"/><label for="kb6"><a href="https://leetcode.com/problems/combination-sum-ii/">Combination Sum II</a></label></div>
+  <div class="question"><input type="checkbox" id="kb7"/><label for="kb7"><a href="https://leetcode.com/problems/combination-sum-iii/">Combination Sum III</a></label></div>
+  <div class="question"><input type="checkbox" id="kb8"/><label for="kb8"><a href="https://leetcode.com/problems/combination-sum-iv/">Combination Sum IV</a></label></div>
+  <div class="question"><input type="checkbox" id="kb9"/><label for="kb9"><a href="https://leetcode.com/problems/word-search/">Word Search I</a></label></div>
+  <div class="question"><input type="checkbox" id="kb10"/><label for="kb10"><a href="https://leetcode.com/problems/word-search-ii/">Word Search II</a></label></div>
+  <div class="question"><input type="checkbox" id="kb11"/><label for="kb11"><a href="https://leetcode.com/problems/sudoku-solver/">Sudoku Solver</a></label></div>
+  <div class="question"><input type="checkbox" id="kb12"/><label for="kb12"><a href="https://leetcode.com/problems/factor-combinations/">Factor Combinations</a></label></div>
+  <div class="question"><input type="checkbox" id="kb13"/><label for="kb13"><a href="https://leetcode.com/problems/split-a-string-into-the-max-number-of-unique-substrings/">Split a String Into Max Unique Substrings</a></label></div>
+</div>
+
+
+<!-- 🌸 Trie and Topological Sort-->
+<div class="pattern">
+  <h2>🌸 Trie and Topological Sort</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="tt1"/><label for="tt1"><a href="https://leetcode.com/problems/implement-trie-prefix-tree/">Implement Trie (Prefix Tree)</a></label></div>
+  <div class="question"><input type="checkbox" id="tt2"/><label for="tt2"><a href="https://leetcode.com/problems/index-pairs-of-a-string/">Index Pairs of a String</a></label></div>
+  <div class="question"><input type="checkbox" id="tt3"/><label for="tt3"><a href="https://leetcode.com/problems/design-add-and-search-words-data-structure/">Design Add and Search Words</a></label></div>
+  <div class="question"><input type="checkbox" id="tt4"/><label for="tt4"><a href="https://leetcode.com/problems/extra-characters-in-a-string/">Extra Characters in a String</a></label></div>
+  <div class="question"><input type="checkbox" id="tt5"/><label for="tt5"><a href="https://leetcode.com/problems/search-suggestions-system/">Search Suggestions System</a></label></div>
+  <div class="question"><input type="checkbox" id="tt6"/><label for="tt6"><a href="https://www.youtube.com/watch?v=ddTC4Zovtbc">Topological Sort (YouTube)</a></label></div>
+  <div class="question"><input type="checkbox" id="tt7"/><label for="tt7"><a href="https://www.educative.io/courses/grokking-the-coding-interview/RM1BDv71V60">Tasks Scheduling</a></label></div>
+  <div class="question"><input type="checkbox" id="tt8"/><label for="tt8"><a href="https://www.educative.io/courses/grokking-the-coding-interview/B8BqP9Zx00p">Tasks Scheduling Order</a></label></div>
+  <div class="question"><input type="checkbox" id="tt9"/><label for="tt9"><a href="https://www.educative.io/courses/grokking-the-coding-interview/xoMZzNEBDlD">All Tasks Scheduling Orders</a></label></div>
+  <div class="question"><input type="checkbox" id="tt10"/><label for="tt10"><a href="https://leetcode.com/problems/alien-dictionary/">Alien Dictionary</a></label></div>
+  <div class="question"><input type="checkbox" id="tt11"/><label for="tt11"><a href="https://www.educative.io/courses/grokking-the-coding-interview/3jZ2PKr1G7r">Reconstructing a Sequence</a></label></div>
+  <div class="question"><input type="checkbox" id="tt12"/><label for="tt12"><a href="https://leetcode.com/problems/minimum-height-trees/">Minimum Height Trees</a></label></div>
+</div>
+
+
+<!-- 🌸Union Find , Ordered Set and Multi-thread -->
+<div class="pattern">
+  <h2>🌸 Union Find, Ordered Set and Multi-thread</h2>
+  <div class="progress-label">Progress</div>
+  <div class="progress-bar"><div class="progress-bar-fill"></div></div>
+
+  <div class="question"><input type="checkbox" id="uf1"/><label for="uf1"><a href="https://leetcode.com/problems/redundant-connection/">Redundant Connection (Leetcode - I) (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf2"/><label for="uf2"><a href="https://leetcode.com/problems/redundant-connection-ii/">Redundant Connection II (Leetcode - II) (Hard)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf3"/><label for="uf3"><a href="https://leetcode.com/problems/number-of-provinces/">Number of Provinces (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf4"/><label for="uf4"><a href="https://leetcode.com/problems/is-graph-bipartite/">Is Graph Bipartite? (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf5"/><label for="uf5"><a href="https://leetcode.com/problems/path-with-minimum-effort/">Path With Minimum Effort (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf6"/><label for="uf6"><a href="https://leetcode.com/problems/merge-similar-items/">Merge Similar Items (Easy)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf7"/><label for="uf7"><a href="https://leetcode.com/problems/132-pattern/">132 Pattern (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf8"/><label for="uf8"><a href="https://leetcode.com/problems/my-calendar-i/">My Calendar I (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf9"/><label for="uf9"><a href="https://leetcode.com/problems/my-calendar-ii/">My Calendar II (Medium)</a></label></div>
+  <div class="question"><input type="checkbox" id="uf10"/><label for="uf10"><a href="https://leetcode.com/problems/my-calendar-iii/">My Calendar III (Hard)</a></label></div>
+</div>
+
+
+
+ 
+
+  <!-- add script for progress logic -->
+  <script>
+    const patterns = document.querySelectorAll('.pattern');
+    function update() {
+      let totalChecked=0, totalBoxes=0;
+      patterns.forEach(p=>{
+        const cbs=p.querySelectorAll('input[type="checkbox"]');
+        const checked=[...cbs].filter(c=>c.checked).length;
+        const pct = cbs.length ? Math.round(checked/cbs.length*100) : 0;
+        p.querySelector('.progress-bar-fill').style.width = pct + '%';
+        totalChecked += checked;
+        totalBoxes += cbs.length;
+      });
+      document.getElementById('overallProgress').style.width = (totalBoxes ? Math.round(totalChecked/totalBoxes*100) : 0) + '%';
+    }
+    document.querySelectorAll('input[type="checkbox"]').forEach(cb=>cb.addEventListener('change', update));
+    update();
+  </script>
+
+  <!-- Login/Logout buttons INSIDE the body -->
+<button id="loginBtn">Sign in with Google</button>
+<button id="logoutBtn" style="display: none;">Logout</button>
+
+<!-- Firebase & app logic -->
+<script type="module" src="script.js"></script>
+</body>
+</html>
